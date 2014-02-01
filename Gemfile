@@ -8,9 +8,12 @@ gem 'rails', '4.0.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
+group :development, :test do
 	gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
+	gem 'spork-rails', '4.0.0'
+	gem 'guard-spork', '1.5.0'
+	gem 'childprocess', '0.3.6'
 end
 
 # Gems used only for assets and not required
@@ -30,6 +33,17 @@ gem 'jquery-rails', '3.0.4'
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  
+  # Uncomment this line on OS X.
+  gem 'growl', '1.0.3'
+
+  # Uncomment these lines on Linux.
+  # gem 'libnotify', '0.8.0'
+
+  # Uncomment these lines on Windows.
+  # gem 'rb-notifu', '0.0.4'
+  # gem 'win32console', '1.3.2'
+  # gem 'wdm', '0.1.0'
 end
 
 # To use ActiveModel has_secure_password
@@ -37,7 +51,7 @@ end
 gem 'turbolinks', '1.1.1'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder', '1.0.2'
+gem 'jbuilder', '1.0.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -53,6 +67,6 @@ group :doc do
 end
 
 group :production do
-	gem 'pg', '0.15.1'
 	gem 'rails_12factor', '0.0.2'
+	gem 'pg', '0.15.1'
 end
